@@ -1,0 +1,12 @@
+#button {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    border-width: 3px;
+    border-style: double;
+    border-radius: 7px;
+}
+
+#title {
+    background-color: #457764;
+}
