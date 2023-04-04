@@ -7,20 +7,33 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<h1 id="title">GuessTheGame Counter</h1>
-<h3>Punktestand:</h3>
-<ul>
-    <li><img src="/img/ilias.png" width="20" height="20"> <b>Ilias:</b> -4</li>
-    <li><b>SUSkia:</b> 69</li>
-</ul>
-<u>Trage deine heutigen Punkte ein:</u> <br>
-<select>
-    <option>SUSkia</option>
-    <option>Ilias</option>
-</select>
-<input type="number" min="1" max="7">
-<button id="button">Absenden</button>
-<h1>Datenschutz</h1>
-<p>Mit Klicken auf den Button 'Absenden' stimmst du unserer <a href="/privacy">Datenschutzerklärung</a> zu</p>
+<nav>
+    <h1 id="title" class="nav-flex-item">GuessTheGame Counter</h1>
+    <a href="/" class="nav-flex-item">Home</a>
+    <a href="/privacy" class="nav-flex-item">Datenschutz</a>
+</nav>
+<div id="main-body">
+    <div id="counter">
+        <h3>Punktestand:</h3>
+        <ul id="points">
+            <li class="no-bullet"><img src="/img/ilias.png" width="20" height="20" class="img-avatar"> <b class="name">Ilias:</b> -4
+            </li>
+            <li class="no-bullet"><img src="/img/suskia.png" width="20" height="20" class="img-avatar"> <b class="name">SUSkia:</b>
+                69
+            </li>
+        </ul>
+        Trage deine heutigen Punkte ein: <br>
+        <select class="input" id="select-name">
+            <option>SUSkia</option>
+            <option>Ilias</option>
+        </select>
+        <input type="number" min="1" max="7" class="input" id="input-points">
+        <button class="input" id="button-commit">Absenden</button>
+    </div>
+    <div id="privacy">
+        <h3 id="privacy-header">Datenschutz</h3>
+        <p>Mit Klicken auf den Button 'Absenden' stimmst du unserer <a href="/privacy">Datenschutzerklärung</a> zu</p>
+    </div>
+</div>
 </body>
 </html>
