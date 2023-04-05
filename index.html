@@ -15,23 +15,26 @@
     </nav>
     <main>
         <div id="counter">
+            <button id="reset-button">Passwort zurücksetzen</button>
             <h3>Punktestand:</h3>
             <ul id="points">
                 <li class="no-bullet"><img src="/img/ilias.png" width="20" height="20" class="img-avatar"> <b
-                        class="name">Ilias:</b> -4
+                        class="name">Ilias:</b> <span id="user-points-0">-4</span>
                 </li>
                 <li class="no-bullet"><img src="/img/suskia.png" width="20" height="20" class="img-avatar"> <b
                         class="name">SUSkia:</b>
-                    69
+                    <span id="user-points-1">69</span>
                 </li>
             </ul>
             Trage deine heutigen Punkte ein: <br>
-            <select class="input" id="select-name">
-                <option>SUSkia</option>
-                <option>Ilias</option>
-            </select>
-            <input type="number" min="1" max="7" class="input" id="input-points">
-            <button class="input" id="button-submit">Absenden</button>
+            <form id="form">
+                <select name="user" class="input" id="select-name">
+                    <option value="1">SUSkia</option>
+                    <option value="0">Ilias</option>
+                </select>
+                <input name="points" type="number" min="1" max="7" class="input" id="input-points" required>
+                <button type="submit" class="input" id="button-submit">Absenden</button>
+            </form>
         </div>
         <div id="privacy">
             <h3 id="privacy-header">Datenschutz</h3>
@@ -40,5 +43,6 @@
         </div>
     </main>
 </div>
+<script src="/script.js"></script>
 </body>
 </html>
