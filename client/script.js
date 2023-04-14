@@ -4,13 +4,6 @@ const pointsUser1 = document.getElementById("user-points-1")
 const form = document.getElementById("form")
 const resetButton = document.getElementById("reset-button")
 
-if(localStorage.getItem('points0') != null) {
-    userPoints[0] = Number(localStorage.getItem('points0'))
-}
-if(localStorage.getItem('points1') != null) {
-    userPoints[1] = Number(localStorage.getItem('points1'))
-}
-setPoints(userPoints)
 if(getCookie('password') == null) {
     document.cookie = 'password' + '=' + prompt("Passwort eingeben:")
 }
@@ -42,4 +35,16 @@ resetButton.addEventListener("click", (e) => {
     e.preventDefault()
     document.cookie = 'password='
     document.cookie = 'password' + '=' + prompt("Passwort eingeben:")
+})
+
+fetch("/api/user_points").then((res) => {
+    res.json().then((data) => {
+        setPoints(data.points)
+    })
+})
+
+fetch("/api/user_points", {
+    method: "post",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({user: "0", points: "1"})
 })
