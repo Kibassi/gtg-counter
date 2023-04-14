@@ -17,7 +17,7 @@ app.get("/api/user_points", (req, res) => {
 })
 
 app.post("/api/user_points", (req, res) => {
-    console.log(req.body)
+    points[req.body["user"]] += parseInt(req.body["points"])
 })
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)
