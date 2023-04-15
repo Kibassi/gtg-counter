@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
     fetch("/api/user_points", {
         method: "post",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({user: data.user, points: data.points})
+        body: JSON.stringify({user: data.user, points: data.points, password: getCookie('password')})
     })
     fetch("/api/user_points").then((res) => {
         res.json().then((data) => {
@@ -45,3 +45,7 @@ fetch("/api/user_points").then((res) => {
         setPoints(data.points)
     })
 })
+
+function showError() {
+
+}
