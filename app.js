@@ -26,8 +26,9 @@ app.post("/api/user_points", (req, res, next) => {
     } else {
         res.status(403).send()
     }
-}, (req) => {
+}, (req, res) => {
     points[req.body["user"]] += parseInt(req.body["points"])
+    res.send()
 })
 
 app.listen(port, () => {
